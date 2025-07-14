@@ -1,34 +1,62 @@
-# KPA API Assignment - FastAPI
 
-## 📦 Project Description
+# KPA Form API – FastAPI Backend
 
-This FastAPI backend implements two endpoints to create and retrieve KPA form data using an SQLite database.
+A lightweight REST API built using FastAPI and SQLAlchemy for submitting and retrieving KPA form data. Developed as part of a backend assignment with structured project organization and Postman test support.
 
-## ▶️ How to Run
+---
 
-1. Install dependencies:
-pip install -r requirements.txt
+## Features
 
-2. Start the development server:
-uvicorn main:app --reload
+- ✅ Submit new KPA form data (POST `/kpa`)
+- ✅ Retrieve form data by ID (GET `/kpa/{id}`)
+- 📄 Swagger UI for API docs at `/docs`
+- 🗃 SQLite database with SQLAlchemy ORM
+- 🧪 Tested with Postman collection
 
-3. Open Swagger UI to test:
-http://127.0.0.1:8000/docs
+---
 
+## Tech Stack
 
-## 🚀 API Endpoints
-
-- **POST** `/kpa`  
-  Create a new KPA form
-
-- **GET** `/kpa/{id}`  
-  Retrieve form data by ID
-
-## 🗃 Tech Stack
-
+- Python 3.10+
 - FastAPI
 - Uvicorn
 - SQLAlchemy
-- SQLite (via SQLAlchemy)
-- Python-dotenv
+- SQLite
+- Pydantic
+- dotenv
 
+---
+
+## Setup Instructions
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/kpa_api_assignment
+cd kpa_api_assignment
+
+# 2. Create virtual environment
+python -m venv env
+env\Scripts\activate   # or source env/bin/activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the application
+uvicorn main:app --reload
+Open in browser: http://127.0.0.1:8000/docs
+
+API Reference
+POST /kpa
+Create a new form record
+Fields: name, email, mobile
+
+GET /kpa/{id}
+Retrieve form data by ID
+
+Environment
+.env
+
+ini
+Copy
+Edit
+DB_URL=sqlite:///./kpa_local.db
